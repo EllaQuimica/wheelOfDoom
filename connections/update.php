@@ -1,11 +1,6 @@
 <?php
-include ("connection.php");
+include ("connect.php");
+include ("mysqlRandom.php");
+$sql = "UPDATE coders_list SET status='Dead' WHERE id='$id' ";
+$result= $connect->query($sql);
 
-$sql = "UPDATE coders_list SET status='Alive' WHERE id=1";
-    if(mysqli_query($connection,$sql)){
-        echo "OK Update.";
-    } else {
-        echo "ERROR: No Update. ";
-}
-
-?>

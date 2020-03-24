@@ -2,7 +2,11 @@
 include("connect.php");
 
 $query="SELECT * FROM coders_list WHERE status='Dead'";
-$result= $connection->query($query);
+$result= $connect->query($query);
 while($row=$result->fetch_assoc()){
 ?> 
-<?php echo $row['name']; }?>
+<?php echo '<tr><td>' . $row['name'] . '</td></tr>';
+ }
+$connect->close();
+
+ ?>

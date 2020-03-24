@@ -1,16 +1,14 @@
 <?php
-include("connection.php");
+include("connect.php");
 
     $name= $_POST['name'];
-    $status= $_POST['status'];
-    
-    $query= "INSERT INTO coders_list(name,status) VALUE('$name','$status')";
-    $result= $connection->query($query);
 
-    if($result){
-        echo "Add New Coder is OK";
-    }
-    else{
-        echo "Add New Coder ERROR";
-    }
+    $query= "INSERT INTO coders_list(name,status) VALUES('$name','Alive')";
+    $result= $connect->query($query);
+
+    echo '<tr><td>' . $result['name'] . '</td></tr>' ;
+
+    header("Location: http://localhost/docs/proyectos/wheelOfDoom/index.php"); die();
+
+    $connect->close();
 ?>
